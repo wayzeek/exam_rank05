@@ -7,15 +7,6 @@
 
 class Warlock
 {
-    private:
-        std::string name;
-        std::string title;
-
-        Warlock();
-        Warlock(Warlock const &other);
-        Warlock &operator=(Warlock const &other);
-
-        std::map<std::string, ASpell *> arr;
     public:
         Warlock(std::string const &name, std::string const &title);
         ~Warlock();
@@ -30,4 +21,11 @@ class Warlock
         void learnSpell(ASpell *aspell_ptr);
         void forgetSpell(std::string name);
         void launchSpell(std::string name, ATarget const &atarget_ref);
+    
+    private:
+        std::string name;
+        std::string title;
+
+        std::map<std::string, ASpell *> spells;
+  
 };

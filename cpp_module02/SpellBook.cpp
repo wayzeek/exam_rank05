@@ -1,6 +1,8 @@
 #include "SpellBook.hpp"
 
-SpellBook::SpellBook() {}
+SpellBook::SpellBook()
+{
+}
 
 SpellBook::~SpellBook()
 {
