@@ -1,6 +1,8 @@
 #pragma once
 
 #include <iostream>
+#include <string>
+
 #include "ASpell.hpp"
 #include "ATarget.hpp"
 #include "SpellBook.hpp"
@@ -10,25 +12,24 @@ class ATarget;
 class SpellBook;
 
 class Warlock
-{
-    public:
-        Warlock(std::string const &name, std::string const &title);
+{   
+    public :
+        Warlock(const std::string &name, const std::string &title);
         ~Warlock();
 
-        std::string const &getName() const;
-        std::string const &getTitle() const;
+        const std::string &getName() const;
+        const std::string &getTitle() const;
 
-        void setTitle(std::string const &title);
+        void setTitle(const std::string &title);
 
         void introduce() const;
 
-        void learnSpell(ASpell *aspell_ptr);
-        void forgetSpell(std::string name);
-        void launchSpell(std::string name, ATarget const &atarget_ref);
+        void learnSpell(ASpell * spell);
+        void forgetSpell(std::string spellName);
+        void launchSpell(std::string spellName, const ATarget &target);
 
-    private:
-        std::string name;
-        std::string title;
-
-        SpellBook book;
-};
+    private :
+        SpellBook _spellBook;
+        std::string _name;
+        std::string _title;   
+} ;

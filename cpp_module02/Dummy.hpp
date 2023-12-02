@@ -2,11 +2,13 @@
 
 #include "ATarget.hpp"
 
-class Dummy: public ATarget
+class ATarget;
+
+class Dummy : public ATarget
 {
-    public:
+    public :
         Dummy();
         ~Dummy();
 
         virtual ATarget *clone() const;
-};
+} ;

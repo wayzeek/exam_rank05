@@ -1,28 +1,26 @@
 #pragma once
 
-#include <iostream>
-#include <string>
+# include <iostream>
+# include <string>
+# include "ATarget.hpp"
 
-#include "ATarget.hpp"
-
-class ATarget;
+class ATarget ;
 
 class ASpell
 {
-    public:
-        ASpell(std::string const &name, std::string const &effects);
+    public :
+        ASpell(const std::string &name, const std::string &effects);
         virtual ~ASpell();
 
-        std::string const &getName() const;
-        std::string const &getEffects() const;
-
-        void launch(ATarget const &atarget_ref) const;
+        const std::string &getName() const;
+        const std::string &getEffects() const;
 
         virtual ASpell *clone() const = 0;
 
-    private:
-        std::string name;
-        std::string effects;
+        void launch(const ATarget &target) const;
+        
+    private :
+        std::string _name;
+        std::string _effects;
 
-   
-};
+} ;

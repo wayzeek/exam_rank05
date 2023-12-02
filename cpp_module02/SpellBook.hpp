@@ -1,18 +1,22 @@
 #pragma once
 
-#include "ASpell.hpp"
 #include <map>
+#include <algorithm>
+
+#include "ASpell.hpp"
+
+class ASpell;
 
 class SpellBook
 {
-    public:
+    public :
         SpellBook();
         ~SpellBook();
 
-        void learnSpell(ASpell *aspell_ptr);
-        void forgetSpell(std::string const &name);
-        ASpell* createSpell(std::string const &name);
-    
-    private:
-        std::map<std::string, ASpell *> arr_spell;
-};
+        void learnSpell(ASpell *spell);
+        void forgetSpell(const std::string &spellName);
+        ASpell *createSpell(const std::string &spellName);
+        
+    private :
+        std::map<std::string, ASpell *> _spellBook;
+} ;

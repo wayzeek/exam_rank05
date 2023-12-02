@@ -4,19 +4,18 @@
 #include <string>
 
 class Warlock
-{
-    public:
-        Warlock(std::string const &name, std::string const &title);
+{   
+    public :
+        Warlock(const std::string &name, const std::string &title);
         ~Warlock();
 
-        std::string const &getName() const;
-        std::string const &getTitle() const;
+        const std::string &getName() const;
+        const std::string &getTitle() const;
 
-        void setTitle(std::string const &title);
+        void setTitle(const std::string &title);
 
         void introduce() const;
-    
-    private:
-        std::string name;
-        std::string title;
-};
+    private :
+        std::string _name;
+        std::string _title;   
+} ;

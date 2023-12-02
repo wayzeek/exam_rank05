@@ -1,21 +1,21 @@
 #include "ATarget.hpp"
 
+ATarget::ATarget(const std::string &type) : _type(type)
+{
 
-ATarget::ATarget(std::string const &type) 
-{ 
-    this->type = type;
 }
 
 ATarget::~ATarget()
 {
+
 }
 
-std::string const &ATarget::getType() const
-{ 
-    return (this->type);
-}
-
-void ATarget::getHitBySpell(ASpell const &aspell_ref) const
+const std::string &ATarget::getType() const
 {
-    std::cout << this->type << " has been " << aspell_ref.getEffects() << "!\n";
+    return (_type);
+}
+
+void ATarget::getHitBySpell(const ASpell &spell) const
+{
+    std::cout << getType() << " has been "<< spell.getEffects() << "!" << std::endl;
 }

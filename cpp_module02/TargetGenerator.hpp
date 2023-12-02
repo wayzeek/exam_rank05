@@ -1,18 +1,22 @@
 #pragma once
 
-#include "ATarget.hpp"
 #include <map>
+#include <algorithm>
+
+#include "ATarget.hpp"
+
+class ATarget;
 
 class TargetGenerator
 {
-    public:
+    public :
         TargetGenerator();
         ~TargetGenerator();
 
-        void learnTargetType(ATarget *target_ptr);
-        void forgetTargetType(std::string const &name);
-        ATarget* createTarget(std::string const &name);
-
-    private:
-        std::map<std::string, ATarget *> arr_target;
-};
+        void learnTargetType(ATarget *target);
+        void forgetTargetType(const std::string &targetName);
+        ATarget *createTarget(const std::string &targetName);
+        
+    private :
+        std::map<std::string, ATarget *> _targetBook;
+} ;
